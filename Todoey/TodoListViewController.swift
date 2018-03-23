@@ -10,11 +10,16 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
 
-    let itemArray = ["Find Mike", "Buy Eggos", "Deztroy Demagorgon"]
+    var itemArray = ["Find Mike", "Buy Eggos", "Deztroy Demagorgon"]
+    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+            itemArray = items
+        }
     }
     
     //MARK - TableView Datasource Methods
@@ -56,6 +61,37 @@ class TodoListViewController: UITableViewController {
         //Deselect row to remove the grey highlight for UI beautification purposes
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    //MARK - Add New Items
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        print("Button Pressed. Let's try that alert thingy...")
+        let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Item", style: .default) {(action) in
+            //what happens when I press the Add Item button goes here
+            print(textField.text!)
+            self.itemArray.append(textField.text!)
+            
+            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+            
+            self.tableView.reloadData()
+        }
+        
+        //Add a text field to the alert to capture the input from the user
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create new item"
+        textField = alertTextField
+            
+        }
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     
     //MARK - Other overrides
 
