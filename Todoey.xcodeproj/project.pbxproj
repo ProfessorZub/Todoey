@@ -12,7 +12,8 @@
 		EEEC11AF2060681200D4A5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC11AD2060681200D4A5E0 /* Main.storyboard */; };
 		EEEC11B12060681200D4A5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEC11B02060681200D4A5E0 /* Assets.xcassets */; };
 		EEEC11B42060681200D4A5E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC11B22060681200D4A5E0 /* LaunchScreen.storyboard */; };
-		EEEC11BC2065AF0700D4A5E0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC11BB2065AF0700D4A5E0 /* Item.swift */; };
+		EEEC11C32069B75C00D4A5E0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEEC11C12069B75C00D4A5E0 /* DataModel.xcdatamodeld */; };
+		EEEC11E6206C0A2600D4A5E0 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC11E5206C0A2600D4A5E0 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		EEEC11B02060681200D4A5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEEC11B32060681200D4A5E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEEC11B52060681200D4A5E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEEC11BB2065AF0700D4A5E0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EEEC11C22069B75C00D4A5E0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		EEEC11E5206C0A2600D4A5E0 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,8 @@
 		EEEC11A82060681200D4A5E0 /* Todoey */ = {
 			isa = PBXGroup;
 			children = (
-				EEEC11BD2065B07E00D4A5E0 /* DataModel */,
 				EEEC11A92060681200D4A5E0 /* AppDelegate.swift */,
+				EEEC11BD2065B07E00D4A5E0 /* DataModel */,
 				EEEC11BF2065B0D500D4A5E0 /* Controllers */,
 				EEEC11BE2065B0A700D4A5E0 /* Views */,
 				EEEC11C02065B0F100D4A5E0 /* Support Files */,
@@ -69,7 +71,7 @@
 		EEEC11BD2065B07E00D4A5E0 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				EEEC11BB2065AF0700D4A5E0 /* Item.swift */,
+				EEEC11C12069B75C00D4A5E0 /* DataModel.xcdatamodeld */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -85,6 +87,7 @@
 		EEEC11BF2065B0D500D4A5E0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EEEC11E5206C0A2600D4A5E0 /* CategoryViewController.swift */,
 				EEEC11AB2060681200D4A5E0 /* TodoListViewController.swift */,
 			);
 			path = Controllers;
@@ -171,8 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEEC11E6206C0A2600D4A5E0 /* CategoryViewController.swift in Sources */,
 				EEEC11AC2060681200D4A5E0 /* TodoListViewController.swift in Sources */,
-				EEEC11BC2065AF0700D4A5E0 /* Item.swift in Sources */,
+				EEEC11C32069B75C00D4A5E0 /* DataModel.xcdatamodeld in Sources */,
 				EEEC11AA2060681200D4A5E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +362,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EEEC11C12069B75C00D4A5E0 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EEEC11C22069B75C00D4A5E0 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = EEEC11C22069B75C00D4A5E0 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EEEC119E2060681100D4A5E0 /* Project object */;
 }
