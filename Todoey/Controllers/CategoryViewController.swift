@@ -145,7 +145,7 @@ extension CategoryViewController: SwipeTableViewCellDelegate {
 //                }
         }
         //customize the delete action appearance. Adding text just to trick source control into commiting.
-        deleteAction.image = UIImage(named: "delete-icon")
+        deleteAction.image = UIImage(named: "trash-icon")
         return [deleteAction]
     }
     
