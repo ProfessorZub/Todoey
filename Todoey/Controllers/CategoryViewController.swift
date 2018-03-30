@@ -144,7 +144,7 @@ extension CategoryViewController: SwipeTableViewCellDelegate {
 //                print("Error deleting category from realm: \(error)")
 //                }
         }
-        //customize the delete action appearance
+        //customize the delete action appearance. Adding text just to trick source control into commiting.
         deleteAction.image = UIImage(named: "delete-icon")
         return [deleteAction]
     }
