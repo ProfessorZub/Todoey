@@ -14,6 +14,19 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    //MARK: - TableView Datasource Methods
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SwipeTableViewCell
+        
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    
+    //MARK: - TableView Actions Methods
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
         guard orientation == .right else { return nil }
@@ -21,28 +34,10 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { (action, IndexPath) in
             //handle what happens when a left swipe is performed in order to delete
             print("Delete Action Happening")
-//            if let categoryForDeletion = self.categories?[indexPath.row] {
-//                do {
-//                    try self.realm.write {
-//                        self.realm.delete(categoryForDeletion)
-//                    }
-//                }
-//                catch {
-//                    print("Error deleting category from realm: \(error)")
-//                }
-//                //                tableView.reloadData()    //not needed after implementing SwipeTableOptions with exapansionStyle destruvtive since that already causes the table to refresh.
-//            }
-            //This implementation force unwraps the category and is not ideal
-            //            do {
-            //                try self.realm.write {
-            //                    self.realm.delete((self.categories?[indexPath.row])!)
-            //                }
-            //            } catch {
-            //                print("Error deleting category from realm: \(error)")
-            //                }
+            self.updateDataModel(at: indexPath)
         }
         //customize the delete action appearance
-        deleteAction.image = UIImage(named: "delete-icon")
+        deleteAction.image = UIImage(named: "trash-icon")
         return [deleteAction]
     }
     
@@ -51,5 +46,10 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
         var options = SwipeTableOptions()
         options.expansionStyle = .destructive
         return options
+    }
+    
+    //MARK: - Update Data Model Methods
+    func updateDataModel(at indexPath: IndexPath) {
+        //Nothing to do at the super class level. This is meant to be overriden by the sub-class to work on the relevant data model.
     }
 }
