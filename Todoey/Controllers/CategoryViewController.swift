@@ -17,9 +17,7 @@ class CategoryViewController: SwipeTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.rowHeight = 80.0
-        
+    
         //Read from database and load some data into the context
         loadCategories()
     }
